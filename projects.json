@@ -4,5 +4,14 @@
   "02_transparency",
   "03_transparency_order1",
   "03_transparency_order2",
-  "03_transparency_order3"
+  "03_transparency_order3",
+  "04_webgl_setup",
+  "05_webgl_square",
+  "06_webgl_triangle",
+  "07_webgl_vertex_color",
+  "08_webgl_interpolation",
+  "09_webgl_one_buffer",
+  "10_webgl_uniform",
+  "11_webgl_model_transformation",
+  "12_webgl_view_transformation"
 ]
