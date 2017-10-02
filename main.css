@@ -1,0 +1,49 @@
+#app, canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#app > div {
+  position: relative;
+  width: calc(100% / 3);
+  height: 100%;
+  float: left;
+  background-color: black;
+}
+
+#app > div:after {
+  display: block;
+  width: 100%;
+  color: white;
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smooth: grayscale;
+}
+
+#app:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#app__webgl:after  { content: "WebGL";     }
+#app__canvas:after { content: "Canvas 2D"; }
+#app__css3d:after  { content: "CSS 3D";    }
+
+select {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
