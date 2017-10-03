@@ -9,6 +9,7 @@ $select.addEventListener('change', function(e) {
 
 document.addEventListener('keyup', function(e) {
   let index = 0
+<<<<<<< HEAD
 
   if (e.key.match(/ArrowRight|ArrowDown/gi)) {
     index = ($select.selectedIndex + 1) % $select.options.length
@@ -20,6 +21,16 @@ document.addEventListener('keyup', function(e) {
     $select.selectedIndex = index
     $select.dispatchEvent(new Event('change'))
   }
+=======
+  if (e.key == 'ArrowRight') {
+    index = ($select.selectedIndex + 1) % $select.options.length
+  } else if (e.key == 'ArrowLeft') {
+    index = ($select.selectedIndex - 1 + $select.options.length) % $select.options.length
+  }
+
+  $select.selectedIndex = index
+  $select.dispatchEvent(new Event('change'))
+>>>>>>> 812c3f4214c8be65037362756c2870b29b84f267
 })
 
 const xhr = new XMLHttpRequest
