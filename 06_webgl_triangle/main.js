@@ -144,10 +144,10 @@ function onResize() {
   metrics.height     = $app.offsetHeight
   metrics.pixelRatio = window.devicePixelRatio
 
-  $canvas.width  = metrics.width
-  $canvas.height = metrics.height
-  $canvas.style.width  = (metrics.width  * metrics.pixelRatio) + 'px'
-  $canvas.style.height = (metrics.height * metrics.pixelRatio) + 'px'
+  $canvas.width  = metrics.width  * metrics.pixelRatio
+  $canvas.height = metrics.height * metrics.pixelRatio
+  $canvas.style.width  = (metrics.width ) + 'px'
+  $canvas.style.height = (metrics.height) + 'px'
 }
 
 onResize()

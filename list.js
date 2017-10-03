@@ -8,7 +8,9 @@ $select.addEventListener('change', function(e) {
 })
 
 document.addEventListener('keyup', function(e) {
-  let index = 0
+  if (!e.key.match(/ArrowRight|ArrowDown|ArrowLeft|ArrowUp/gi)) return
+
+  let index = $select.selectedIndex
 
   if (e.key.match(/ArrowRight|ArrowDown/gi)) {
     index = ($select.selectedIndex + 1) % $select.options.length
