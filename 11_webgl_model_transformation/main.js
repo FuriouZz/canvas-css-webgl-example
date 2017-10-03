@@ -65,7 +65,7 @@ function Triangle() {
   const triangleModelMatrix = mat4.create()
 
   const triangleModel = {
-    position: [ 0, 0, 0 ],
+    position: [ 0, 0, -1 ], // You see that ? Z axis not working. Below -1 or 1 the triangle disappears
     scale: [ 0, 0, 0 ],
     angleZ: 0
   }
@@ -73,7 +73,7 @@ function Triangle() {
   // An array with 3 vertices with X and Y position, RGB color
   const vertices = [
     // X  // Y   // Red // Green // Blue
-    -1.0, -1.0,  1.0,   0.0,     0.0,
+    -1.0, -1.0,  1.0,   0.0,    0.0,
     0.0,  1.0,  0.0,   1.0,     0.0,
     1.0, -1.0,  0.0,   0.0,     1.0
   ]
@@ -123,15 +123,18 @@ function Triangle() {
     gl.enableVertexAttribArray( v_color_location )
     gl.vertexAttribPointer( v_color_location, vertexColorSize, gl.FLOAT, false, vertexByteSize, vertexColorOffset )
 
-    //
+    // Reset model matrix
     mat4.identity( triangleModelMatrix )
 
+    // Make translation
     triangleModel.position[0] = Math.cos(time * 0.001) * 0.5
     mat4.translate( triangleModelMatrix, triangleModelMatrix, triangleModel.position )
 
+    // Make scale
     triangleModel.scale[0] = triangleModel.scale[1] = triangleModel.scale[2] = Math.abs(Math.sin(time * 0.001))
     mat4.scale( triangleModelMatrix, triangleModelMatrix, triangleModel.scale )
 
+    // Make rotation on Z axis
     triangleModel.angleZ = Math.cos(time * 0.001) * Math.PI
     mat4.rotate( triangleModelMatrix, triangleModelMatrix, triangleModel.angleZ, [ 0, 0, 1 ] )
 
