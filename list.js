@@ -4,7 +4,22 @@ const $select = document.createElement('select')
 document.body.appendChild($select)
 
 $select.addEventListener('change', function(e) {
-  window.location.href = e.currentTarget.value
+  window.location.href = $select.value
+})
+
+document.addEventListener('keyup', function(e) {
+  let index = 0
+
+  if (e.key.match(/ArrowRight|ArrowDown/gi)) {
+    index = ($select.selectedIndex + 1) % $select.options.length
+  } else if (e.key.match(/ArrowLeft|ArrowUp/gi)) {
+    index = ($select.selectedIndex - 1 + $select.options.length) % $select.options.length
+  }
+
+  if (index != $select.selectedIndex) {
+    $select.selectedIndex = index
+    $select.dispatchEvent(new Event('change'))
+  }
 })
 
 const xhr = new XMLHttpRequest
