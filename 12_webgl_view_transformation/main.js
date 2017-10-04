@@ -66,7 +66,7 @@ function Triangle() {
 
   const triangleModel = {
     position: [ 0, 0, -10 ], // Now Z axis works and we can go below than 1 and -1
-    scale: [ 0, 0, 0 ],
+    scale: [ 1, 1, 1 ],
     angleZ: 0
   }
 

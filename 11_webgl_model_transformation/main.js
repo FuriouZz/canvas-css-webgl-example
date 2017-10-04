@@ -66,7 +66,7 @@ function Triangle() {
 
   const triangleModel = {
     position: [ 0, 0, -1 ], // You see that ? Z axis not working. Below -1 or 1 the triangle disappears
-    scale: [ 0, 0, 0 ],
+    scale: [ 1, 1, 1 ],
     angleZ: 0
   }
 
